@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "befd4591-4b8c-45e0-9ca9-3d6e0c85631f",
+		"name": "Digit88 Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Create User",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "{{$randomFirstName}}",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "{{$randomLastName}}",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{$randomEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "contact",
+									"value": "{{$randomPhoneNumber}}",
+									"type": "text"
+								},
+								{
+									"key": "address_line_one",
+									"value": "{{$randomStreetAddress}}",
+									"type": "text"
+								},
+								{
+									"key": "address_line_two",
+									"value": "{{$randomStreetAddress}}",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/assignment/public/crud",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"assignment",
+								"public",
+								"crud"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/assignment/public/crud",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"assignment",
+								"public",
+								"crud"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single View",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/assignment/public/crud/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"assignment",
+								"public",
+								"crud",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"contact\": \"{{$randomPhoneNumber}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/assignment/public/crud/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"assignment",
+								"public",
+								"crud",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/assignment/public/crud/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"assignment",
+								"public",
+								"crud",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Add bank account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "bank_name",
+							"value": "{{$randomCompanyName}}",
+							"type": "text"
+						},
+						{
+							"key": "account_number",
+							"value": "{{$randomBankAccountIban}}",
+							"type": "text"
+						},
+						{
+							"key": "balance",
+							"value": "2542",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/assignment/public/accounts/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"assignment",
+						"public",
+						"accounts",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of user bank accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/assignment/public/accounts/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"assignment",
+						"public",
+						"accounts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Users and their total balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/assignment/public/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"assignment",
+						"public",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
